@@ -1,0 +1,23 @@
+.card {
+  border: 1px solid #d9d8d8;
+  display: block;
+  padding: 10px;
+  color: vsr(--grey);
+  border-radius: 5px;
+}
+
+.images {
+  margin-bottom: 16px;
+}
+
+
+
+.truncateText {
+  overflow: hidden;
+  display: -webkit-box !important;
+  /* display 2 lines only */
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+}
