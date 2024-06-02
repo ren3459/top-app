@@ -28,7 +28,7 @@ const Card: FC<ICardProps> = ({
         className={styles.imges}
       />
       <div>
-        <div>
+        <div className={styles.metaCard}>
           <span>{typeText}</span>
           <span>&#183;</span>
           <span>{datePublish}</span>
@@ -36,7 +36,7 @@ const Card: FC<ICardProps> = ({
             {countLike} <LikeIcon />
           </span>
         </div>
-        <h2 className={styles.title}>{title}</h2>
+        <h3 className={styles.title}>{title}</h3>
         <P className={styles.truncateText}>{children}</P>
         <div>
           <span>{timeRead} минуты</span>

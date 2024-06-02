@@ -4,13 +4,12 @@
   padding: 10px;
   color: vsr(--grey);
   border-radius: 5px;
+  color: #6E6E6E;
 }
 
 .images {
   margin-bottom: 16px;
 }
-
-
 
 .truncateText {
   overflow: hidden;
@@ -19,5 +18,19 @@
   -webkit-line-clamp: 4;
   line-clamp: 4;
   -webkit-box-orient: vertical;
-
+  margin-bottom: 21px;
 }
+
+.title {
+  margin-bottom: 6px;
+  color: #2C2C2C;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.51px;
+}
+
+.metaCard {
+  margin-bottom: 8px;
+}
+
+.mr 8 mr auto
