@@ -29,19 +29,21 @@ const Card: FC<ICardProps> = ({
       />
       <div>
         <div className={styles.metaCard}>
-          <span>{typeText}</span>
-          <span>&#183;</span>
+          <div>
+          <span className={styles.typeTextMeta}>{typeText}</span>
+          <span className={styles.dotMeta}>&#183;</span>
           <span>{datePublish}</span>
-          <span>
+          </div>
+          <span className={styles.likeMeta}>
             {countLike} <LikeIcon />
           </span>
         </div>
         <h3 className={styles.title}>{title}</h3>
         <P className={styles.truncateText}>{children}</P>
-        <div>
+        <div className={styles.footerCard}>
           <span>{timeRead} минуты</span>
-          <a href={href}>
-            Читать <LongArrow />
+          <a href={href} className={styles.linkCard}>
+            Читать <LongArrow className={styles.linkArrow}/>
           </a>
         </div>
       </div>

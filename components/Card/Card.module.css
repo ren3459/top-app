@@ -30,7 +30,34 @@
 }
 
 .metaCard {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 8px;
 }
 
-.mr 8 mr auto
+.typeTextMeta{
+  margin-right: 8px;
+}
+
+.dotMeta{
+  margin-right: 8px;
+}
+
+.likeMeta{
+  display: flex;
+  align-items: center;
+}
+
+.footerCard{
+  display: flex;
+  justify-content: space-between;
+}
+
+.linkCard{
+  display: flex;
+  justify-content: center;
+  color: #1473E6;
+}
+.linkArrow{
+  margin-top: 1px;
+}

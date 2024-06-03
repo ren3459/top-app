@@ -26,7 +26,7 @@ export default function Home() {
       <div className={styles.cardGrid}>
         <Card
           countLike={4}
-          datePublish={new Date().toLocaleDateString()}
+          datePublish={"1 месяц назад"}
           href="https://ya.ru"
           imglink="../components/Card/Safari.jpg"
           timeRead={3}
@@ -43,7 +43,41 @@ export default function Home() {
         </Card>
         <Card
           countLike={4}
-          datePublish={new Date().toLocaleDateString()}
+          datePublish={"1 месяц назад"}
+          href="https://ya.ru"
+          imglink="../components/Card/Safari.jpg"
+          timeRead={3}
+          title="Как работать с CSS Grid"
+          typeText="Front-end"
+        >
+          <u>Грид-раскладка (CSS Grid Layout)</u> представляет собой двумерную
+          систему сеток в CSS. Гриды подойдут и для верстки основных областей
+          страницы, и небольших элементов пользовательского интерфейса. Эта
+          статья даёт общее представление о грид-раскладке и новой терминологии,
+          которая является частью спецификации CSS Grid Layout Level 1. Более
+          подробно показанные возможности будут описаны описаны далее в
+          руководстве.
+        </Card>
+         <Card
+          countLike={4}
+          datePublish={"1 месяц назад"}
+          href="https://ya.ru"
+          imglink="../components/Card/Safari.jpg"
+          timeRead={3}
+          title="Как работать с CSS Grid"
+          typeText="Front-end"
+        >
+          <u>Грид-раскладка (CSS Grid Layout)</u> представляет собой двумерную
+          систему сеток в CSS. Гриды подойдут и для верстки основных областей
+          страницы, и небольших элементов пользовательского интерфейса. Эта
+          статья даёт общее представление о грид-раскладке и новой терминологии,
+          которая является частью спецификации CSS Grid Layout Level 1. Более
+          подробно показанные возможности будут описаны описаны далее в
+          руководстве.
+        </Card>
+         <Card
+          countLike={4}
+          datePublish={"1 месяц назад"}
           href="https://ya.ru"
           imglink="../components/Card/Safari.jpg"
           timeRead={3}
