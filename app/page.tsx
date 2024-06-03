@@ -1,94 +1,97 @@
-import Image from "next/image";
+import { Htag } from "@/components";
+import Button from "@/components/Button";
+import Card from "@/components/Card";
+import P from "@/components/P";
+import Tag from "@/components/Tag";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+      <Htag tag="h1">Text tets</Htag>
+      <Button appearance="primary" arrow="right">
+        sdfdf
+      </Button>
+      <Button appearance="ghost" arrow="right">
+        sdfdf
+      </Button>
+      <P>
+        Студенты освоят не только hard skills, необходимые для работы
+        веб-дизайнером, но и soft skills — навыки, которые позволят эффективно
+        взаимодействовать в команде с менеджерами, разработчиками и
+        маркетологами. Выпускники факультета могут успешно конкурировать с
+        веб-дизайнерами уровня middle.
+      </P>
+      <Tag color="green">sdfdsf</Tag>
+      <div className={styles.cardGrid}>
+        <Card
+          countLike={4}
+          datePublish={"1 месяц назад"}
+          href="https://ya.ru"
+          imglink="../components/Card/Safari.jpg"
+          timeRead={3}
+          title="Как работать с CSS Grid"
+          typeText="Front-end"
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+          <u>Грид-раскладка (CSS Grid Layout)</u> представляет собой двумерную
+          систему сеток в CSS. Гриды подойдут и для верстки основных областей
+          страницы, и небольших элементов пользовательского интерфейса. Эта
+          статья даёт общее представление о грид-раскладке и новой терминологии,
+          которая является частью спецификации CSS Grid Layout Level 1. Более
+          подробно показанные возможности будут описаны описаны далее в
+          руководстве.
+        </Card>
+        <Card
+          countLike={4}
+          datePublish={"1 месяц назад"}
+          href="https://ya.ru"
+          imglink="../components/Card/Safari.jpg"
+          timeRead={3}
+          title="Как работать с CSS Grid"
+          typeText="Front-end"
         >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+          <u>Грид-раскладка (CSS Grid Layout)</u> представляет собой двумерную
+          систему сеток в CSS. Гриды подойдут и для верстки основных областей
+          страницы, и небольших элементов пользовательского интерфейса. Эта
+          статья даёт общее представление о грид-раскладке и новой терминологии,
+          которая является частью спецификации CSS Grid Layout Level 1. Более
+          подробно показанные возможности будут описаны описаны далее в
+          руководстве.
+        </Card>
+         <Card
+          countLike={4}
+          datePublish={"1 месяц назад"}
+          href="https://ya.ru"
+          imglink="../components/Card/Safari.jpg"
+          timeRead={3}
+          title="Как работать с CSS Grid"
+          typeText="Front-end"
         >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+          <u>Грид-раскладка (CSS Grid Layout)</u> представляет собой двумерную
+          систему сеток в CSS. Гриды подойдут и для верстки основных областей
+          страницы, и небольших элементов пользовательского интерфейса. Эта
+          статья даёт общее представление о грид-раскладке и новой терминологии,
+          которая является частью спецификации CSS Grid Layout Level 1. Более
+          подробно показанные возможности будут описаны описаны далее в
+          руководстве.
+        </Card>
+         <Card
+          countLike={4}
+          datePublish={"1 месяц назад"}
+          href="https://ya.ru"
+          imglink="../components/Card/Safari.jpg"
+          timeRead={3}
+          title="Как работать с CSS Grid"
+          typeText="Front-end"
         >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <u>Грид-раскладка (CSS Grid Layout)</u> представляет собой двумерную
+          систему сеток в CSS. Гриды подойдут и для верстки основных областей
+          страницы, и небольших элементов пользовательского интерфейса. Эта
+          статья даёт общее представление о грид-раскладке и новой терминологии,
+          которая является частью спецификации CSS Grid Layout Level 1. Более
+          подробно показанные возможности будут описаны описаны далее в
+          руководстве.
+        </Card>
       </div>
     </main>
   );

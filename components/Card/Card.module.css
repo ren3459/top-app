@@ -1,0 +1,63 @@
+.card {
+  border: 1px solid #d9d8d8;
+  display: block;
+  padding: 10px;
+  color: vsr(--grey);
+  border-radius: 5px;
+  color: #6E6E6E;
+}
+
+.images {
+  margin-bottom: 16px;
+}
+
+.truncateText {
+  overflow: hidden;
+  display: -webkit-box !important;
+  /* display 2 lines only */
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  margin-bottom: 21px;
+}
+
+.title {
+  margin-bottom: 6px;
+  color: #2C2C2C;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.51px;
+}
+
+.metaCard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.typeTextMeta{
+  margin-right: 8px;
+}
+
+.dotMeta{
+  margin-right: 8px;
+}
+
+.likeMeta{
+  display: flex;
+  align-items: center;
+}
+
+.footerCard{
+  display: flex;
+  justify-content: space-between;
+}
+
+.linkCard{
+  display: flex;
+  justify-content: center;
+  color: #1473E6;
+}
+.linkArrow{
+  margin-top: 1px;
+}
