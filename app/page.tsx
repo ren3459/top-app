@@ -1,11 +1,15 @@
+"use client";
 import { Htag } from "@/components";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
 import P from "@/components/P";
 import Tag from "@/components/Tag";
 import styles from "./page.module.css";
+import Raiting from "@/components/Raiting";
+import { useState } from "react";
 
 export default function Home() {
+  const [raiting, setRaiting] = useState<number>(2);
   return (
     <main className={styles.main}>
       <Htag tag="h1">Text tets</Htag>
@@ -23,6 +27,7 @@ export default function Home() {
         веб-дизайнерами уровня middle.
       </P>
       <Tag color="green">sdfdsf</Tag>
+      <Raiting raitnig={raiting} isEditable setRaiting={setRaiting} />
       <div className={styles.cardGrid}>
         <Card
           countLike={4}
@@ -58,7 +63,7 @@ export default function Home() {
           подробно показанные возможности будут описаны описаны далее в
           руководстве.
         </Card>
-         <Card
+        <Card
           countLike={4}
           datePublish={"1 месяц назад"}
           href="https://ya.ru"
@@ -75,7 +80,7 @@ export default function Home() {
           подробно показанные возможности будут описаны описаны далее в
           руководстве.
         </Card>
-         <Card
+        <Card
           countLike={4}
           datePublish={"1 месяц назад"}
           href="https://ya.ru"
