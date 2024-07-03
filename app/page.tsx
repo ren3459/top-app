@@ -7,8 +7,10 @@ import Tag from "@/components/Tag";
 import styles from "./page.module.css";
 import Raiting from "@/components/Raiting";
 import { useState } from "react";
+import LikeBtn from "@/components/LikeBtn";
 
 export default function Home() {
+  const [count, setCount] = useState<number>(0);
   const [raiting, setRaiting] = useState<number>(2);
   return (
     <main className={styles.main}>
@@ -27,6 +29,7 @@ export default function Home() {
         веб-дизайнерами уровня middle.
       </P>
       <Tag color="green">sdfdsf</Tag>
+      <LikeBtn count={count} setCount={setCount} />
       <Raiting raitnig={raiting} isEditable setRaiting={setRaiting} />
       <div className={styles.cardGrid}>
         <Card
