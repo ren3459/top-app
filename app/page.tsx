@@ -1,5 +1,5 @@
 "use client";
-import { Htag } from "@/components";
+import { Htag } from "@/components/Htag";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
 import P from "@/components/P";
@@ -8,12 +8,13 @@ import styles from "./page.module.css";
 import Raiting from "@/components/Raiting";
 import { useState } from "react";
 import LikeBtn from "@/components/LikeBtn";
+import Layout from "@/layout/Layout";
 
 export default function Home() {
   const [count, setCount] = useState<number>(0);
   const [raiting, setRaiting] = useState<number>(2);
   return (
-    <main className={styles.main}>
+    <Layout className={styles.main}>
       <Htag tag="h1">Text tets</Htag>
       <Button appearance="primary" arrow="right">
         sdfdf
@@ -101,6 +102,6 @@ export default function Home() {
           руководстве.
         </Card>
       </div>
-    </main>
+    </Layout>
   );
 }
