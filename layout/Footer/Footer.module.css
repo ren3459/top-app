@@ -1,4 +1,22 @@
 .footerWrapper {
   background-color: var(--primary);
   color: var(--white);
+  font-size: 16px;
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 40px;
+  padding: 25px 35px;
+}
+
+.footerWrapper a:hover {
+  color: var(--grey-hover);
+}
+
+
+@media (max-width: 765px) {
+  .footerWrapper {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }

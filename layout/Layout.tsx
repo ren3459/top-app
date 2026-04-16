@@ -3,6 +3,7 @@ import styles from "./Layout.module.css";
 import Sidebar from "./Sidebar/Sidebar";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import { FunctionComponent } from "react";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
@@ -15,6 +16,16 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   );
 };
 
-// withLayout уже есть в 10.7
+export const withLayout = <T extends Record<string, unknown>>(
+  Component: FunctionComponent<T>,
+) => {
+  return function withLayoutComponent(props: T): JSX.Element {
+    return (
+      <Layout>
+        <Component {...props} />
+      </Layout>
+    );
+  };
+};
 
 export default Layout;

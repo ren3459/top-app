@@ -6,10 +6,14 @@ const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
   return (
     <div className={cn(className, styles.footerWrapper)} {...props}>
       <div className={styles.copyright}>
-        OwlTop © 2020 - 2021 Все права защищены
+        OwlTop © 2020 - {new Date().getFullYear()} Все права защищены
       </div>
-      <a href="#">Пользовательское соглашение</a>
-      <a href="#">Политика конфиденциальности</a>
+      <a href="#" target="_blank">
+        Пользовательское соглашение
+      </a>
+      <a href="#" target="_blank">
+        Политика конфиденциальности
+      </a>
     </div>
   );
 };
