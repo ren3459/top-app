@@ -1,0 +1,12 @@
+.headerText {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 100%;
+  color: #3b434e;
+}
+
+.headerContainer {
+  margin: 40px 0 21px 5px;
+  display: flex;
+  justify-content: space-between;
+}

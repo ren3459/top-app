@@ -8,19 +8,18 @@ import styles from "./page.module.css";
 import Raiting from "@/components/Raiting";
 import { useState } from "react";
 import LikeBtn from "@/components/LikeBtn";
-import Layout from "@/layout/Layout";
 
 export default function Home() {
   const [count, setCount] = useState<number>(0);
   const [raiting, setRaiting] = useState<number>(2);
   return (
-    <Layout className={styles.main}>
+    <main className={styles.main}>
       <Htag tag="h1">Text tets</Htag>
       <Button appearance="primary" arrow="right">
-        sdfdf
+        btn
       </Button>
       <Button appearance="ghost" arrow="right">
-        sdfdf
+        btn
       </Button>
       <P>
         Студенты освоят не только hard skills, необходимые для работы
@@ -32,7 +31,7 @@ export default function Home() {
       <Tag color="green">sdfdsf</Tag>
       <LikeBtn count={count} setCount={setCount} />
       <Raiting raitnig={raiting} isEditable setRaiting={setRaiting} />
-      <div className={styles.cardGrid}>
+      {/* <div className={styles.cardGrid}>
         <Card
           countLike={4}
           datePublish={"1 месяц назад"}
@@ -101,7 +100,7 @@ export default function Home() {
           подробно показанные возможности будут описаны описаны далее в
           руководстве.
         </Card>
-      </div>
-    </Layout>
+      </div> */}
+    </main>
   );
 }
