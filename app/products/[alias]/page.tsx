@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 export default function PageProducts({
   params,
 }: {
-  params: { aliass: string };
+  params: { alias: string };
 }) {
   return (
     <main>
-      <Htag tag="h1">Dynamic params page, now {params.aliass}</Htag>
+      <Htag tag="h1">Dynamic params page, now {params.alias}</Htag>
       <Button appearance="primary" arrow="right">
         btn
       </Button>
