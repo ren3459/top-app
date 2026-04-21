@@ -1,11 +1,11 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
-export interface IRaitingProps
+export interface IRatingProps
   extends DetailedHTMLProps<
     HTMLAttributes<HTMLParagraphElement>,
     HTMLParagraphElement
   > {
   isEditable?: boolean;
-  raitnig: number;
-  setRaiting?: (raitnig: number) => void;
+  rating: number;
+  setRating?: (rating: number) => void;
 }

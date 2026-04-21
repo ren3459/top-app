@@ -1,17 +1,21 @@
 "use client";
 import { Htag } from "@/components/Htag";
 import Button from "@/components/Button";
-import Card from "@/components/Card";
 import P from "@/components/P";
 import Tag from "@/components/Tag";
 import styles from "./page.module.css";
-import Raiting from "@/components/Raiting";
+import Rating from "@/components/Rating";
 import { useState } from "react";
 import LikeBtn from "@/components/LikeBtn";
+import { GetStaticProps } from "next";
+
+export const getStaticProps: GetStaticProps = async () => {
+  return { props: {} };
+};
 
 export default function Home() {
   const [count, setCount] = useState<number>(0);
-  const [raiting, setRaiting] = useState<number>(2);
+  const [rating, setRating] = useState<number>(2);
   return (
     <main className={styles.main}>
       <Htag tag="h1">Text tets</Htag>
@@ -30,7 +34,7 @@ export default function Home() {
       </P>
       <Tag color="green">sdfdsf</Tag>
       <LikeBtn count={count} setCount={setCount} />
-      <Raiting raitnig={raiting} isEditable setRaiting={setRaiting} />
+      <Rating rating={rating} isEditable setRating={setRating} />
       {/* <div className={styles.cardGrid}>
         <Card
           countLike={4}
