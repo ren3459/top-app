@@ -28,12 +28,16 @@ interface HomeProps extends Record<string, unknown> {
 export default async function Home() {
   // const [count, setCount] = useState<number>(0);
   // const [rating, setRating] = useState<number>(2);
-  // const firstCategory = 0;
-  // const { data: menu } = await axios.get<MenuItem[]>(
-  //   "https://jsonplaceholder.typicode.com/posts",
-  //   // process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
-  //   // { firstCategory },
-  // );
+  const firstCategory = 0;
+  // console.log(process.env.NEXT_PUBLIC_DOMAIN);
+  const { data: menu } = await axios.get<MenuItem[]>(
+    "https://jsonplaceholder.typicode.com/posts",
+    // process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
+    // { firstCategory },
+  );
+
+  console.log(menu);
+
   return (
     <main className={styles.main}>
       <Htag tag="h1">Text tets</Htag>
