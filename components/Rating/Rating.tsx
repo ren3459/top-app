@@ -55,8 +55,8 @@ const Rating: FC<IRatingProps> = ({
   };
   const changeDisplay = (i: number) => {
     if (!isEditable) return;
+    constructRating(i);
   };
-  constructRating(i);
   return (
     <div {...props}>
       {ratingArray.map((r, i) => (
