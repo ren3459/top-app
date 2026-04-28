@@ -4,6 +4,6 @@ export interface ITagProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   size?: "m" | "l";
   children: ReactNode;
-  color?: "ghost" | "red" | "grey" | "green" | "primary";
+  color?: "ghost" | "red" | "gray" | "green" | "primary";
   href?: "string";
 }

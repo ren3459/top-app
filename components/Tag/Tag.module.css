@@ -18,12 +18,12 @@
 
 
 .ghost {
-  border: 1px solid var(--grey-li);
+  border: 1px solid var(--gray-li);
 }
 
-.grey {
-  border: 1px solid var(--grey-ghost);
-  background: var(--grey-ghost);
+.gray {
+  border: 1px solid var(--gray-ghost);
+  background: var(--gray-ghost);
   color: white;
 }
 
@@ -35,8 +35,8 @@
 
 .green {
   color: var(--green);
-  background: var(--green-li);
-  border: 1px solid var(--green-li);
+  background: var(--green-light);
+  border: 1px solid var(--green-light);
 }
 
 .primary {

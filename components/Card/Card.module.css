@@ -2,7 +2,7 @@
   border: 1px solid #d9d8d8;
   display: block;
   padding: 10px;
-  color: vsr(--grey);
+  color: vsr(--gray);
   border-radius: 5px;
   color: #6E6E6E;
 }
@@ -35,29 +35,30 @@
   margin-bottom: 8px;
 }
 
-.typeTextMeta{
+.typeTextMeta {
   margin-right: 8px;
 }
 
-.dotMeta{
+.dotMeta {
   margin-right: 8px;
 }
 
-.likeMeta{
+.likeMeta {
   display: flex;
   align-items: center;
 }
 
-.footerCard{
+.footerCard {
   display: flex;
   justify-content: space-between;
 }
 
-.linkCard{
+.linkCard {
   display: flex;
   justify-content: center;
   color: #1473E6;
 }
-.linkArrow{
+
+.linkArrow {
   margin-top: 1px;
 }

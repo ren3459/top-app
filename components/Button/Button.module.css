@@ -20,13 +20,13 @@
 }
 
 .ghost {
-  border: 1px solid var(--grey-li);
+  border: 1px solid var(--gray-li);
   background: var(--background);
 }
 
 
 .ghost:hover {
-  background: var(--grey-hover);
+  background: var(--gray-hover);
 }
 
 .arrow {

@@ -20,7 +20,7 @@ const Tag: FC<ITagProps> = ({
         [styles.ghost]: color === "ghost",
         [styles.green]: color === "green",
         [styles.red]: color === "red",
-        [styles.grey]: color === "grey",
+        [styles.gray]: color === "gray",
         [styles.primary]: color === "primary",
       })}
       {...rest}
