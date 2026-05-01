@@ -30,13 +30,11 @@ export default async function Home() {
   // const [rating, setRating] = useState<number>(2);
   const firstCategory = 0;
   // console.log(process.env.NEXT_PUBLIC_DOMAIN);
-  const { data: menu } = await axios.get<MenuItem[]>(
-    "https://jsonplaceholder.typicode.com/posts",
-    // process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
-    // { firstCategory },
-  );
-
-  console.log(menu);
+  // const { data: menu } = await axios.get<MenuItem[]>(
+  //   "https://jsonplaceholder.typicode.com/posts",
+  //   // process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
+  //   // { firstCategory },
+  // );
 
   return (
     <main className={styles.main}>

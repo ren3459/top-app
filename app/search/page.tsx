@@ -1,17 +1,15 @@
 import { Htag } from "@/components/Htag";
 import Button from "@/components/Button";
 import { Metadata } from "next";
-import axios from "axios";
-import { MenuItem } from "@/interface/menu.interface";
 
 export const metadata: Metadata = {
-  title: "service",
+  title: "books",
 };
 
-export default async function PageServices() {
+export default function PageSearch() {
   return (
     <main>
-      <Htag tag="h1">Services</Htag>
+      <Htag tag="h1">Search</Htag>
       <Button appearance="primary" arrow="right">
         btn
       </Button>

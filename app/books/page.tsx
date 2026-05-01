@@ -3,17 +3,13 @@ import Button from "@/components/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "pages",
+  title: "books",
 };
 
-export default function PageProducts({
-  params,
-}: {
-  params: { alias: string };
-}) {
+export default function PageProducts() {
   return (
     <main>
-      <Htag tag="h1">Dynamic params page, now {params.alias}</Htag>
+      <Htag tag="h1">Books</Htag>
       <Button appearance="primary" arrow="right">
         btn
       </Button>
