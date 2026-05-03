@@ -1,20 +1,20 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import { IPProps } from "./IPProps";
-import styles from "./P.module.css";
-import cn from "classnames";
+import { IPProps } from './IPProps';
+import styles from './P.module.css';
+import cn from 'classnames';
 
-const P: FC<IPProps> = ({ children, size = "m", className, ...rest }) => {
+const P: FC<IPProps> = ({ children, size = 'm', className, ...rest }) => {
   return (
     <p
       className={cn(
         styles.p,
         {
-          [styles.s]: size === "s",
-          [styles.m]: size === "m",
-          [styles.l]: size === "l",
+          [styles.s]: size === 's',
+          [styles.m]: size === 'm',
+          [styles.l]: size === 'l',
         },
-        className
+        className,
       )}
       {...rest}
     >

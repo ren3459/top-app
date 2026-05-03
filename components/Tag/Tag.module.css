@@ -4,6 +4,7 @@
   border-radius: 20px;
 }
 
+
 .m {
   padding: 5px 10px;
   font-size: 12px;
@@ -18,13 +19,13 @@
 
 
 .ghost {
-  border: 1px solid var(--gray-li);
+  border: 1px solid var(--gray-light);
 }
 
 .gray {
-  border: 1px solid var(--gray-ghost);
-  background: var(--gray-ghost);
-  color: white;
+  color: var(--white);
+  background: #B3C0D9;
+  font-weight: bold;
 }
 
 .red {

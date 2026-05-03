@@ -2,25 +2,27 @@ import { Htag } from "@/components/Htag";
 import Button from "@/components/Button";
 import { Metadata } from "next";
 import axios from "axios";
-import { MenuItem } from "@/interface/menu.interface";
-import { firstLevelMenu } from "@/helpers/helpers";
+import { PostProps } from "../page";
 
 export const metadata: Metadata = {
-  title: "products",
+  title: "Post",
 };
 
 export default async function PageProducts({
   params,
 }: {
-  params: { alias: string };
+  params: { id: string };
 }) {
-  const { data: menu } = await axios.get<MenuItem[]>(
-    "https://jsonplaceholder.typicode.com/posts",
+  const { id } = await params;
+
+  const { data: post } = await axios.get<PostProps>(
+    `https://jsonplaceholder.typicode.com/posts/${id}`,
   );
 
   return (
     <main>
-      <Htag tag="h1">Products {params.alias}</Htag>
+      <Htag tag="h1">Products {params.id}</Htag>
+      {post.title}
       <Button appearance="primary" arrow="right">
         btn
       </Button>
