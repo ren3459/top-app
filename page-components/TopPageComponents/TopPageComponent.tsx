@@ -4,6 +4,7 @@ import { TopPageComponentProps } from './TopPageComponent.props';
 import { PostProps } from '@/app/posts23/page';
 import Tag from '@/components/Tag';
 import Sort from '@/page-components/TopPageComponents/Sort.svg';
+import { Htag } from '@/components/Htag';
 
 const TopPageComponent = (
   { page }: { page: PostProps },
@@ -13,17 +14,21 @@ const TopPageComponent = (
   // }: TopPageComponentProps
 ): JSX.Element => {
   return (
-    <>
-      A{page.title}
-      <Tag color="gray" size="m">
-        10
-      </Tag>
-      <span>
-        <Sort />
-        По рейтингу
-      </span>
-      <span>По цене</span>
-    </>
+    <div className={styles.wrapper}>
+      <div className={styles.title}>
+        <Htag tag="h1">{page.title.split(' ')[0]}</Htag>
+        {page && (
+          <Tag color="gray" size="m">
+            10
+            {/* // TODO add length */}
+          </Tag>
+        )}
+        <span>
+          <Sort />
+          По рейтингу
+        </span>
+      </div>
+    </div>
   );
 };
 

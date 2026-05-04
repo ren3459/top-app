@@ -29,13 +29,11 @@ export default async function PageProducts({
       method: 'GET',
     },
   ).then((res) => res.json());
-  console.log(alias);
 
   return (
     <main>
       <TopPageComponent page={page} />
       {/* products={} firstCategory={} /> */}
-      <Htag tag="h1">Products {params.alias}</Htag>
       <Button appearance="primary" arrow="right">
         btn
       </Button>
