@@ -1,13 +1,13 @@
-import { Htag } from "@/components/Htag";
-import Button from "@/components/Button";
-import P from "@/components/P";
-import Tag from "@/components/Tag";
-import styles from "./page.module.css";
-import Rating from "@/components/Rating";
-import LikeBtn from "@/components/LikeBtn";
-import { GetStaticProps } from "next";
-import axios from "axios";
-import { MenuItem } from "@/interface/menu.interface";
+import { Htag } from '@/components/Htag';
+import Button from '@/components/Button';
+import P from '@/components/P';
+import Tag from '@/components/Tag';
+import styles from './page.module.css';
+import Rating from '@/components/Rating';
+import LikeBtn from '@/components/LikeBtn';
+import { GetStaticProps } from 'next';
+import axios from 'axios';
+import { MenuItem } from '@/interface/menu.interface';
 
 interface HomeProps extends Record<string, unknown> {
   menu: MenuItem[];
@@ -30,10 +30,14 @@ export default async function Home() {
   // const [rating, setRating] = useState<number>(2);
   const firstCategory = 0;
   // console.log(process.env.NEXT_PUBLIC_DOMAIN);
-  // const { data: menu } = await axios.get<MenuItem[]>(
-  //   "https://jsonplaceholder.typicode.com/posts",
-  //   // process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
-  //   // { firstCategory },
+  const { data: menu } = await axios.post<MenuItem[]>(
+    // "https://jsonplaceholder.typicode.com/posts",
+    process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
+    { firstCategory },
+  );
+
+  // const { data: page } = await axios.get(
+  //   process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/byAlias/',
   // );
 
   return (
