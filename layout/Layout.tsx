@@ -1,12 +1,12 @@
-import { LayoutProps } from "./LayoutProps";
-import styles from "./Layout.module.css";
-import Sidebar from "./Sidebar/Sidebar";
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
-import { FunctionComponent } from "react";
-import { AppContextProvider, IAppContext } from "@/context/app.context";
-
-const Layout = ({ children }: LayoutProps): JSX.Element => {
+import { LayoutProps } from './LayoutProps';
+import styles from './Layout.module.css';
+import Sidebar from './Sidebar/Sidebar';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
+import { FunctionComponent } from 'react';
+import { AppContextProvider, IAppContext } from '@/context/app.context';
+// УСТАРЕЛ
+const LayoutPage = ({ children }: LayoutProps): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <Header className={styles.header} />
@@ -23,12 +23,12 @@ export const withLayout = <T extends Record<string, unknown> & IAppContext>(
   return function withLayoutComponent(props: T): JSX.Element {
     return (
       <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
-        <Layout>
+        <LayoutPage>
           <Component {...props} />
-        </Layout>
+        </LayoutPage>
       </AppContextProvider>
     );
   };
 };
 
-export default Layout;
+export default LayoutPage;

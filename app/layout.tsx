@@ -1,41 +1,18 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Layout from "@/layout/Layout";
-import { AppContextProvider } from "@/context/app.context";
-import { MenuItem } from "@/interface/menu.interface";
-import { TopLevelCategory } from "@/interface/page.interface";
+import type { Metadata } from 'next';
+import './globals.css';
+import { AppContextProvider } from '@/context/app.context';
+import { MenuItem } from '@/interface/menu.interface';
+import { TopLevelCategory } from '@/interface/page.interface';
+import Header from '@/layout/Header/Header';
+import Sidebar from '@/layout/Sidebar/Sidebar';
+import Footer from '@/layout/Footer/Footer';
+import styles from './layout.module.css';
+import { getMenu } from '@/api/menu';
 
 export const metadata: Metadata = {
-  title: "My Top-App",
-  description: "My proj",
+  title: 'My Top-App',
+  description: 'My proj',
 };
-
-async function getMenu(firstCategory: TopLevelCategory): Promise<MenuItem[]> {
-  const domain = process.env.NEXT_PUBLIC_DOMAIN?.trim();
-
-  if (!domain) {
-    return [];
-  }
-
-  try {
-    const response = await fetch(`${domain}/api/top-page/find`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ firstCategory }),
-      next: { revalidate: 3600 },
-    });
-
-    if (!response.ok) {
-      return [];
-    }
-
-    return response.json();
-  } catch {
-    return [];
-  }
-}
 
 export default async function RootLayout({
   children,
@@ -50,7 +27,12 @@ export default async function RootLayout({
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <body>
         <AppContextProvider menu={menu} firstCategory={firstCategory}>
-          <Layout>{children}</Layout>
+          <div className={styles.wrapper}>
+            <Header className={styles.header} />
+            <Sidebar className={styles.sidebar} />
+            <div className={styles.body}>{children}</div>
+            <Footer className={styles.footer} />
+          </div>
         </AppContextProvider>
       </body>
     </html>
