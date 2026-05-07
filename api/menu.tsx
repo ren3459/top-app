@@ -4,7 +4,7 @@ import { TopLevelCategory } from '@/interface/page.interface';
 export async function getMenu(
   firstCategory: TopLevelCategory,
 ): Promise<MenuItem[]> {
-  const domain = process.env.NEXT_PUBLIC_DOMAIN?.trim();
+  const domain = process.env.API_URL?.trim();
 
   if (!domain) {
     return [];

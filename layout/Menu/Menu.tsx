@@ -44,7 +44,7 @@ const Menu = (): JSX.Element => {
   };
 
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => (
-    <div>
+    <ul className={styles.secondBlock}>
       {menu.map((m) => {
         if (m.pages.map((p) => p.alias).includes(path.split('/')[2]))
           m.isOpened === true;
@@ -66,19 +66,20 @@ const Menu = (): JSX.Element => {
           </div>
         );
       })}
-    </div>
+    </ul>
   );
 
   const buildThirdLevel = (pages: PageItem[], route: string) => {
     return pages.map((p) => (
-      <a
+      <Link
+        key={p._id}
         href={`/${route}/${p.alias}`}
         className={cn(styles.thirdLevel, {
           [styles.thirdLevelActive]: `/${route}/${p.alias}` === path,
         })}
       >
         {p.category}
-      </a>
+      </Link>
     ));
   };
   return <div className={styles.menuWrapper}>{buildFirstLevel()}</div>;

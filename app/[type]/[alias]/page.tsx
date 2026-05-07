@@ -6,6 +6,11 @@ import { MenuItem } from '@/interface/menu.interface';
 import { firstLevelMenu } from '@/helpers/helpers';
 import TopPageComponent from '@/page-components/TopPageComponents/TopPageComponent';
 import { PostProps } from '@/app/posts23/page';
+import { useContext } from 'react';
+import { AppContext } from '@/context/app.context';
+import { ProductModel } from '@/interface/product.interface';
+import { TopLevelCategory, TopPageModel } from '@/interface/page.interface';
+import { fetched } from '@/api/fetch';
 
 export const metadata: Metadata = {
   title: 'products',
@@ -21,18 +26,33 @@ export default async function PageProducts({
   // );
 
   const { alias } = await params;
-  const page: PostProps = await fetch(
-    // 'https://jsonplaceholder.typicode.com/posts',
-    `https://jsonplaceholder.typicode.com/posts/${alias}`,
-
+  // const { menu } = useContext(AppContext);
+  const firstCategory = TopLevelCategory.Courses;
+  const products: ProductModel[] = await fetch(
+    `${process.env.API_URL}/api/product/find`,
     {
-      method: 'GET',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ category: alias, limit: 10 }),
+      next: { revalidate: 3600 },
     },
   ).then((res) => res.json());
 
+  const page: TopPageModel = await fetched(
+    `/api/top-page/byAlias/${alias}`,
+    'isr',
+  );
+  console.log(products);
+
   return (
     <main>
-      <TopPageComponent page={page} />
+      <TopPageComponent
+        products={products}
+        page={page}
+        firstCategory={firstCategory}
+      />
       {/* products={} firstCategory={} /> */}
       <Button appearance="primary" arrow="right">
         btn
