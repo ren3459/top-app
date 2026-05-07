@@ -1,12 +1,7 @@
-import { ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-export interface ICardProps {
-  title: string;
+export interface ICardProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  color?: 'white' | 'blue';
   children: ReactNode;
-  typeText: string;
-  timeRead: number;
-  datePublish: string;
-  href: string;
-  countLike: number;
-  imglink: string;
 }

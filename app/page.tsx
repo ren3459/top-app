@@ -56,11 +56,11 @@ export default async function Home() {
       {/* <LikeBtn count={count} setCount={setCount} />
       <Rating rating={rating} isEditable setRating={setRating} /> */}
       {/* <div className={styles.cardGrid}>
-        <Card
+        <CardHW
           countLike={4}
           datePublish={"1 месяц назад"}
           href="https://ya.ru"
-          imglink="../components/Card/Safari.jpg"
+          imglink="../components/CardHW/Safari.jpg"
           timeRead={3}
           title="Как работать с CSS Grid"
           typeText="Front-end"
@@ -72,7 +72,7 @@ export default async function Home() {
           которая является частью спецификации CSS Grid Layout Level 1. Более
           подробно показанные возможности будут описаны описаны далее в
           руководстве.
-        </Card>
+        </CardHW>
       </div> */}
     </main>
   );
