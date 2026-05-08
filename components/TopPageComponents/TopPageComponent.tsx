@@ -6,12 +6,66 @@ import Sort from '@/components/TopPageComponents/Sort.svg';
 import { Htag } from '@/components/Htag';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import Card from '@/components/Card';
+import { IhhDataProps } from '@/components/hhData/IhhDataProps';
+import { TopLevelCategory } from '@/interface/page.interface';
+import HhData from '@/components/hhData/HhhData';
 
 const TopPageComponent = ({
   products,
   page,
   firstCategory,
 }: TopPageComponentProps): JSX.Element => {
+  const hhDataVal: IhhDataProps[] = [
+    {
+      _id: 'frontend-react',
+      count: 124,
+      juniorSalary: 80000,
+      middleSalary: 220000,
+      seniorSalary: 420000,
+      updatedAt: new Date('2026-05-01'),
+    },
+    {
+      _id: 'backend-nodejs',
+      count: 98,
+      juniorSalary: 100000,
+      middleSalary: 280000,
+      seniorSalary: 500000,
+      updatedAt: new Date('2026-05-03'),
+    },
+    {
+      _id: 'fullstack-nextjs',
+      count: 76,
+      juniorSalary: 120000,
+      middleSalary: 320000,
+      seniorSalary: 580000,
+      updatedAt: new Date('2026-05-04'),
+    },
+    {
+      _id: 'mobile-react-native',
+      count: 43,
+      juniorSalary: 90000,
+      middleSalary: 260000,
+      seniorSalary: 470000,
+      updatedAt: new Date('2026-05-05'),
+    },
+    {
+      _id: 'devops-aws',
+      count: 31,
+      juniorSalary: 150000,
+      middleSalary: 400000,
+      seniorSalary: 700000,
+      updatedAt: new Date('2026-05-06'),
+    },
+    {
+      _id: 'python-ml',
+      count: 52,
+      juniorSalary: 130000,
+      middleSalary: 350000,
+      seniorSalary: 650000,
+      updatedAt: new Date('2026-05-07'),
+    },
+  ];
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
@@ -33,13 +87,9 @@ const TopPageComponent = ({
         <Htag tag="h2">Вакансии - {page.category}</Htag>
         <Tag color="red">hh.ru</Tag>
       </div>
-
-      <div className={styles.hh}>
-        <Card className={styles.hhCount}>
-          <div className={styles.hhStatTitle}>Всего вакансий</div>
-          <div className={styles.hhStatCount}>{page.hh?.count}</div>
-        </Card>
-      </div>
+      {firstCategory === TopLevelCategory.Courses && (
+        <HhData {...hhDataVal[0]}></HhData>
+      )}
     </div>
   );
 };

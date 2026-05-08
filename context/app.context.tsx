@@ -1,7 +1,7 @@
-"use client";
-import { MenuItem } from "@/interface/menu.interface";
-import { TopLevelCategory } from "@/interface/page.interface";
-import { createContext, ReactNode, useState } from "react";
+'use client';
+import { MenuItem } from '@/interface/menu.interface';
+import { TopLevelCategory } from '@/interface/page.interface';
+import { createContext, ReactNode, useState } from 'react';
 
 export interface IAppContext {
   menu: MenuItem[];

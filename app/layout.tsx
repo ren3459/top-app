@@ -19,7 +19,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const firstCategory = TopLevelCategory.Courses;
+  const firstCategory = TopLevelCategory.Services;
   const menu = await getMenu(firstCategory);
 
   return (
