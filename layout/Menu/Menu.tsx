@@ -6,21 +6,21 @@ import cn from 'classnames';
 import { AppContext } from '@/context/app.context';
 import { FirstLevelMenuItem, PageItem } from '@/interface/menu.interface';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { firstLevelMenu } from '@/helpers/helpers';
 
 const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext);
   const path = usePathname();
-  console.log('menu ', firstCategory);
 
   const openSecondLevel = (secondCategory: string) => {
     setMenu &&
       setMenu(
-        menu.map((m) => {
-          if (m._id.secondCategory == secondCategory) m.isOpened = !m.isOpened;
-          return m;
-        }),
+        menu.map((m) =>
+          m._id.secondCategory === secondCategory
+            ? { ...m, isOpened: !m.isOpened }
+            : m,
+        ),
       );
   };
 
@@ -48,8 +48,9 @@ const Menu = (): JSX.Element => {
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => (
     <ul className={styles.secondBlock}>
       {menu.map((m) => {
-        if (m.pages.map((p) => p.alias).includes(path.split('/')[2]))
-          m.isOpened === true;
+        const isOpened =
+          m.isOpened || m.pages.some((p) => p.alias === path.split('/')[2]);
+
         return (
           <div key={m._id.secondCategory}>
             <div
@@ -60,7 +61,7 @@ const Menu = (): JSX.Element => {
             </div>
             <div
               className={cn(styles.secondLevelBlock, {
-                [styles.secondLevelBlockOpened]: m.isOpened,
+                [styles.secondLevelBlockOpened]: isOpened,
               })}
             >
               {buildThirdLevel(m.pages, menuItem.route)}

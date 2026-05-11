@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { AppContextProvider } from '@/context/app.context';
-import { MenuItem } from '@/interface/menu.interface';
 import { TopLevelCategory } from '@/interface/page.interface';
 import Header from '@/layout/Header/Header';
 import Sidebar from '@/layout/Sidebar/Sidebar';
@@ -19,6 +18,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // const { firstCategory } = useContext(AppContext);
   const firstCategory = TopLevelCategory.Services;
   const menu = await getMenu(firstCategory);
 

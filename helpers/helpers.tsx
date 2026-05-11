@@ -5,6 +5,7 @@ import ProductsIcon from '@/layout/Menu/icons/products.svg';
 
 import { TopLevelCategory } from '@/interface/page.interface';
 import { FirstLevelMenuItem } from '@/interface/menu.interface';
+import { notFound } from 'next/navigation';
 
 export const firstLevelMenu: FirstLevelMenuItem[] = [
   {
@@ -49,4 +50,10 @@ export const declOfNum = (
       ? 2
       : cases[number % 10 < 5 ? number % 10 : 5]
   ];
+};
+
+export const getFirstCategory = (type: string) => {
+  const firstLevelItem = firstLevelMenu.find((m) => m.route === type);
+  if (!firstLevelItem) notFound();
+  return firstLevelItem.id;
 };
