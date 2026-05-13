@@ -1,11 +1,9 @@
 'use client';
 import styles from './TopPageComponent.module.css';
-import cn from 'classnames';
 import Tag from '@/components/Tag';
-import Sort from '@/components/TopPageComponents/Sort.svg';
+import Sort from '@/helpers/icons/Sort.svg';
 import { Htag } from '@/components/Htag';
 import { TopPageComponentProps } from './TopPageComponent.props';
-import Card from '@/components/Card';
 import { IhhDataProps } from '@/components/hhData/IhhDataProps';
 import { TopLevelCategory } from '@/interface/page.interface';
 import HhData from '@/components/hhData/HhhData';
@@ -90,6 +88,9 @@ const TopPageComponent = ({
       {firstCategory === TopLevelCategory.Courses && (
         <HhData {...hhDataVal[0]}></HhData>
       )}
+      <div className={styles.advantagesWrapper}>
+        <Htag tag="h2">Преимущества</Htag>
+      </div>
     </div>
   );
 };

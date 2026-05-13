@@ -1,10 +1,10 @@
-"use client";
-import { FC, useState } from "react";
-import LikeSvg from "./Like.svg";
-import cn from "classnames";
+'use client';
+import { FC } from 'react';
+import LikeSvg from '@/helpers/iconsLike.svg';
+import cn from 'classnames';
 
-import { ILikeBtnProps } from "./ILikeBtnProps";
-import styles from "./LikeBtn.module.css";
+import { ILikeBtnProps } from './ILikeBtnProps';
+import styles from './LikeBtn.module.css';
 
 const LikeBtn: FC<ILikeBtnProps> = ({
   className,

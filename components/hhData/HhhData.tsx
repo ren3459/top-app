@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import styles from '@/components/hhData/HhData.module.css';
 import Card from '@/components/Card';
-import RateIcon from './icons/starRound.svg';
+import RateIcon from '@/helpers/icons/starRound.svg';
 import { priceRu } from '@/helpers/helpers';
 import { IhhDataProps } from '@/components/hhData/IhhDataProps';
 

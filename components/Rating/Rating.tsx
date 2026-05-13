@@ -1,9 +1,9 @@
-"use client";
-import { FC, KeyboardEvent, useCallback, useEffect, useState } from "react";
-import StarIcon from "./Star.svg";
-import { IRatingProps } from "./IRatingProps";
-import styles from "./Rating.module.css";
-import cn from "classnames";
+'use client';
+import { FC, KeyboardEvent, useEffect, useState } from 'react';
+import StarIcon from '@/helpers/iconsStar.svg';
+import { IRatingProps } from './IRatingProps';
+import styles from './Rating.module.css';
+import cn from 'classnames';
 
 const Rating: FC<IRatingProps> = ({
   isEditable = false,
@@ -46,7 +46,7 @@ const Rating: FC<IRatingProps> = ({
   }, [constructRating, rating]);
 
   const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
-    if (e.code !== "Space" || !setRating) return;
+    if (e.code !== 'Space' || !setRating) return;
     setRating(i);
   };
   const onClickIcon = (i: number) => {

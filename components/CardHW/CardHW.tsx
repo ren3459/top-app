@@ -2,10 +2,10 @@ import { FC } from 'react';
 
 import { ICardHWProps } from './ICardHWProps';
 import styles from './CardHW.module.css';
-import P from '../P';
-import LikeIcon from './like.svg';
-import imagesLoc from './Safari.jpg';
-import LongArrow from './longArrow.svg';
+import P from '@/components/P';
+import LikeIcon from '@/helpers/icons/like.svg';
+import imagesLoc from '@/helpers/icons/Safari.jpg';
+import LongArrow from '@/helpers/icons/longArrow.svg';
 import Image from 'next/image';
 
 const CardHW: FC<ICardHWProps> = ({
