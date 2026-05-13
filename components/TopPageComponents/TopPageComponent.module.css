@@ -19,36 +19,3 @@
   gap: 20px;
   margin-bottom: 20px;
 }
-
-.advantagesWrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-
-  gap: 30px;
-}
-
-.advantageContainer {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10px 40px;
-  place-items: center left;
-}
-
-.advantageRLine {
-  height: 100%;
-  width: 1px;
-  background-color: var(--gray-light);
-  justify-self: center;
-  /* margin-left: 27px; */
-}
-.advantageTitle {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 100%;
-}
-.advantageDescription {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 29px;
-}

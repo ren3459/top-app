@@ -7,7 +7,8 @@ import { TopPageComponentProps } from './TopPageComponent.props';
 import { IhhDataProps } from '@/components/hhData/IhhDataProps';
 import { TopLevelCategory } from '@/interface/page.interface';
 import HhData from '@/components/hhData/HhhData';
-import ApproveIcon from '@/helpers/icons/approve.svg';
+import Advantages from '@/components/Advantages/Advantages';
+import P from '@/components/P/P';
 
 const TopPageComponent = ({
   products,
@@ -89,21 +90,10 @@ const TopPageComponent = ({
       {firstCategory === TopLevelCategory.Courses && (
         <HhData {...hhDataVal[0]}></HhData>
       )}
-      <div className={styles.advantagesWrapper}>
-        <Htag tag="h2">Преимущества</Htag>
-        {page.advantages?.map((advantage, key) => (
-          <div className={styles.advantageContainer}>
-            <ApproveIcon />
-            <span className={styles.advantageTitle} key={key}>
-              {advantage.title}
-            </span>
-            <div className={styles.advantageRLine} />
-            <span className={styles.advantageDescription} key={key}>
-              {advantage.description}
-            </span>
-          </div>
-        ))}
-      </div>
+      {page.advantages && page.advantages.length > 0 && (
+        <Advantages advantages={page.advantages} />
+      )}
+      {page.seoText && <P>{page.seoText}</P>}
     </div>
   );
 };
