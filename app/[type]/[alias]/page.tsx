@@ -22,14 +22,14 @@ export default async function PageProducts({
   const firstCategory = firstCategoryItem.id;
   console.log(alias);
 
-  const products: ProductModel[] = await fetched('/api/product/find', 'isr', {
+  const products: ProductModel[] = await fetched('/api/product/find', 'ssr', {
     method: 'POST',
     body: { category: alias, limit: 10 },
   });
 
   const page: TopPageModel = await fetched(
     `/api/top-page/byAlias/${alias}`,
-    'isr',
+    'ssr',
   );
 
   return (

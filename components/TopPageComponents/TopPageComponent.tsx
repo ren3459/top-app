@@ -1,7 +1,6 @@
 'use client';
 import styles from './TopPageComponent.module.css';
 import Tag from '@/components/Tag';
-import Sort from '@/helpers/icons/Sort.svg';
 import { Htag } from '@/components/Htag';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import { IhhDataProps } from '@/components/hhData/IhhDataProps';
@@ -9,12 +8,26 @@ import { TopLevelCategory } from '@/interface/page.interface';
 import HhData from '@/components/hhData/HhhData';
 import Advantages from '@/components/Advantages/Advantages';
 import P from '@/components/P/P';
+import Sort from '@/components/Sort/Sort';
+import { SortEnum } from '../Sort/ISortProps';
+import { useReducer } from 'react';
+import { SortReducer } from './sort.reducer';
 
 const TopPageComponent = ({
   products,
   page,
   firstCategory,
 }: TopPageComponentProps): JSX.Element => {
+  const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(
+    SortReducer,
+    {
+      products,
+      sort: SortEnum.Rating,
+    },
+  );
+  const setSort = (sort: SortEnum) => {
+    dispatchSort({ type: sort });
+  };
   const hhDataVal: IhhDataProps[] = [
     {
       _id: 'frontend-react',
@@ -75,13 +88,11 @@ const TopPageComponent = ({
             {products.length}
           </Tag>
         )}
-        <span>
-          <Sort />
-          По рейтингу
-        </span>
+        <Sort sort={sort} setSort={setSort} />
       </div>
       <div>
-        {products && products.map((p) => <div key={p._id}>{p.title}</div>)}
+        {sortedProducts &&
+          sortedProducts.map((p) => <div key={p._id}>{p.title}</div>)}
       </div>
       <div className={styles.hhTitle}>
         <Htag tag="h2">Вакансии - {page.category}</Htag>
@@ -93,7 +104,21 @@ const TopPageComponent = ({
       {page.advantages && page.advantages.length > 0 && (
         <Advantages advantages={page.advantages} />
       )}
-      {page.seoText && <P>{page.seoText}</P>}
+      {page.seoText && (
+        <P className={styles.seoText} size="l">
+          {page.seoText}
+        </P>
+      )}
+      <div>
+        <Htag tag="h2">Получаемые навыки</Htag>
+        <div className={styles.tagContainer}>
+          {page.tags.map((tag, key) => (
+            <Tag key={key} className={styles.tagSelf} size="m" color="primary">
+              {tag}
+            </Tag>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
