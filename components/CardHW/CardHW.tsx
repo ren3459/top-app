@@ -4,7 +4,7 @@ import { ICardHWProps } from './ICardHWProps';
 import styles from './CardHW.module.css';
 import P from '@/components/P';
 import LikeIcon from '@/helpers/icons/like.svg';
-import imagesLoc from '@/helpers/icons/Safari.jpg';
+import imagesLoc from '@/components/CardHW/Safari.jpg';
 import LongArrow from '@/helpers/icons/longArrow.svg';
 import Image from 'next/image';
 

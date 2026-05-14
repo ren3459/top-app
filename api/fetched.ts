@@ -25,6 +25,8 @@ export async function fetched<TResponse, TBody = unknown>(
           }
         : { cache: 'force-cache' as const };
 
+  console.log(`${process.env.API_URL}${url}`);
+
   const res = await fetch(`${process.env.API_URL}${url}`, {
     method,
     headers: {

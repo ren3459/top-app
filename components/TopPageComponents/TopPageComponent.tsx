@@ -12,6 +12,7 @@ import Sort from '@/components/Sort/Sort';
 import { SortEnum } from '../Sort/ISortProps';
 import { useReducer } from 'react';
 import { SortReducer } from './sort.reducer';
+import Textarea from '../Textarea';
 
 const TopPageComponent = ({
   products,
@@ -94,6 +95,8 @@ const TopPageComponent = ({
         {sortedProducts &&
           sortedProducts.map((p) => <div key={p._id}>{p.title}</div>)}
       </div>
+
+      <Textarea placeholder="sda" aria-atomic />
       <div className={styles.hhTitle}>
         <Htag tag="h2">Вакансии - {page.category}</Htag>
         <Tag color="red">hh.ru</Tag>

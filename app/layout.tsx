@@ -19,7 +19,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   // const { firstCategory } = useContext(AppContext);
-  const firstCategory = TopLevelCategory.Services;
+  const firstCategory = TopLevelCategory.Courses;
   const menu = await getMenu(firstCategory);
 
   return (
