@@ -12,7 +12,7 @@ const Product: FC<IProductProps> = ({ product, className, ...rest }) => {
   return (
     <Card className={styles.product}>
       <div className={styles.logo}>
-        <img src={product.image} alt={product.title} />
+        <img src={process.env.API_URL + product.image} alt={product.title} />
       </div>
       <div className={styles.title}>{product.title}</div>
       <div className={styles.price}>{product.price}</div>
