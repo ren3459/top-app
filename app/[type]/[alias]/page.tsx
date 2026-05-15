@@ -20,7 +20,6 @@ export default async function PageProducts({
   const firstCategoryItem = firstLevelMenu.find((m) => m.route === type);
   if (!firstCategoryItem) notFound();
   const firstCategory = firstCategoryItem.id;
-  console.log(alias);
 
   const products: ProductModel[] = await fetched('/api/product/find', 'ssr', {
     method: 'POST',

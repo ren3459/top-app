@@ -1,6 +1,6 @@
 'use client';
 import { FC, KeyboardEvent, useEffect, useState } from 'react';
-import StarIcon from '@/helpers/iconsStar.svg';
+import StarIcon from '@/helpers/icons/Star.svg';
 import { IRatingProps } from './IRatingProps';
 import styles from './Rating.module.css';
 import cn from 'classnames';
