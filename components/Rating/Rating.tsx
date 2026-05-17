@@ -12,20 +12,37 @@ const Rating: FC<IRatingProps> = ({
   setRating,
   ...props
 }) => {
-  const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
-    new Array(5).fill(<></>),
-  );
+  const [displayRating, setDisplayRating] = useState(rating);
 
-  const constructRating = (currentRating: number) => {
-    const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
-      return (
+  useEffect(() => {
+    setDisplayRating(rating);
+  }, [rating]);
+
+  const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
+    if (e.code !== 'Space' || !setRating) return;
+    setRating(i);
+  };
+
+  const onClickIcon = (i: number) => {
+    if (!isEditable || !setRating) return;
+    setRating(i);
+  };
+
+  const changeDisplay = (i: number) => {
+    if (!isEditable) return;
+    setDisplayRating(i);
+  };
+
+  return (
+    <div className={className} {...props}>
+      {new Array(5).fill(null).map((_, i) => (
         <span
           key={i}
           onMouseEnter={() => changeDisplay(i + 1)}
           onMouseLeave={() => changeDisplay(rating)}
           onClick={() => onClickIcon(i + 1)}
           className={cn(styles.star, {
-            [styles.filled]: i < currentRating,
+            [styles.filled]: i < displayRating,
             [styles.editable]: isEditable,
           })}
         >
@@ -36,31 +53,6 @@ const Rating: FC<IRatingProps> = ({
             }
           />
         </span>
-      );
-    });
-    setRatingArray(updatedArray);
-  };
-
-  useEffect(() => {
-    constructRating(rating);
-  }, [constructRating, rating]);
-
-  const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
-    if (e.code !== 'Space' || !setRating) return;
-    setRating(i);
-  };
-  const onClickIcon = (i: number) => {
-    if (!isEditable || !setRating) return;
-    setRating(i);
-  };
-  const changeDisplay = (i: number) => {
-    if (!isEditable) return;
-    constructRating(i);
-  };
-  return (
-    <div {...props}>
-      {ratingArray.map((r, i) => (
-        <span key={i}>{r}</span>
       ))}
     </div>
   );
