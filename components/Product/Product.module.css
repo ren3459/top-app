@@ -35,6 +35,7 @@
   grid-column: ratestart / end;
 
   white-space: nowrap;
+  margin-bottom: 5px;
 }
 
 .hr,
@@ -66,7 +67,7 @@
 .price,
 .credit {
   align-self: flex-end;
-
+  font-weight: 400;
   font-size: 20px;
   line-height: 27px;
 }
@@ -78,6 +79,8 @@
 
 .oldPrice {
   margin-left: 5px;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .rating {
@@ -88,7 +91,7 @@
   margin-bottom: 15px;
 
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1;
 }
 
 .priceTitle,

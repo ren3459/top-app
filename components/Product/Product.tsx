@@ -8,6 +8,7 @@ import Rating from '@/components/Rating/Rating';
 import Tag from '@/components/Tag/Tag';
 import Button from '../Button';
 import { priceRu } from '@/helpers/helpers';
+import Divider from '../Divider';
 
 const Product: FC<IProductProps> = ({ product, className, ...rest }) => {
   const [rating, setRating] = useState<number>(
@@ -16,26 +17,31 @@ const Product: FC<IProductProps> = ({ product, className, ...rest }) => {
   return (
     <Card className={styles.product}>
       <div className={styles.logo}>
-        <img src={process.env.API_URL + product.image} alt={product.title} />
+        <img
+          src={process.env.API_URL + product.image}
+          alt={product.title}
+          width={'70px'}
+          height={'70px'}
+        />
       </div>
       <div className={styles.title}>{product.title}</div>
       <div className={styles.price}>
-        {priceRu(product.price)}
+        <span>{priceRu(product.price)}</span>
         {product.oldPrice && (
           <Tag className={styles.oldPrice} color="green">
-            {product.price - product.oldPrice}
+            {priceRu(product.price - product.oldPrice)}
           </Tag>
         )}
       </div>
       <div className={styles.credit}>
-        {priceRu(product.credit)}/<span className={styles.month}>месяцев</span>
+        {priceRu(product.credit)}/<span className={styles.month}>мес</span>
       </div>
       <div className={styles.rating}>
         <Rating isEditable={true} setRating={setRating} rating={rating} />
       </div>
       <div className={styles.tags}>
         {product.categories.map((c, k) => (
-          <Tag color="ghost" key={k}>
+          <Tag className={styles.category} color="ghost" key={k}>
             {c}
           </Tag>
         ))}
@@ -43,10 +49,7 @@ const Product: FC<IProductProps> = ({ product, className, ...rest }) => {
       <div className={styles.priceTitle}>Цена</div>
       <div className={styles.creditTitle}>Кредит</div>
       <div className={styles.rateTitle}>{product.reviewCount}отзывов</div>
-
-      <div className={styles.hr}>
-        <hr className={styles.hr} />
-      </div>
+      <Divider className={styles.hr} />
       <div className={styles.description}>{product.description}</div>
       <div className={styles.feature}>фичи</div>
       <div className={styles.advBlock}>
@@ -59,9 +62,7 @@ const Product: FC<IProductProps> = ({ product, className, ...rest }) => {
           <div>{product.disadvantages}</div>
         </div>
       </div>
-      <div className={styles.hr}>
-        <hr className={styles.hr} />
-      </div>
+      <Divider className={styles.hr} />
       <div className={styles.actions}>
         <Button appearance="primary">Узнать подробнее</Button>
         <Button appearance="ghost" arrow="right">
