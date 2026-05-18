@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import styles from './Product.module.css';
 import cn from 'classnames';
@@ -7,18 +7,31 @@ import Card from '@/components/Card/Card';
 import Rating from '@/components/Rating/Rating';
 import Tag from '@/components/Tag/Tag';
 import Button from '../Button';
+import { priceRu } from '@/helpers/helpers';
 
 const Product: FC<IProductProps> = ({ product, className, ...rest }) => {
+  const [rating, setRating] = useState<number>(
+    product.reviewAvg ?? product.initialRating,
+  );
   return (
     <Card className={styles.product}>
       <div className={styles.logo}>
         <img src={process.env.API_URL + product.image} alt={product.title} />
       </div>
       <div className={styles.title}>{product.title}</div>
-      <div className={styles.price}>{product.price}</div>
-      <div className={styles.credit}>{product.credit}</div>
+      <div className={styles.price}>
+        {priceRu(product.price)}
+        {product.oldPrice && (
+          <Tag className={styles.oldPrice} color="green">
+            {product.price - product.oldPrice}
+          </Tag>
+        )}
+      </div>
+      <div className={styles.credit}>
+        {priceRu(product.credit)}/<span className={styles.month}>месяцев</span>
+      </div>
       <div className={styles.rating}>
-        <Rating rating={product.reviewAvg ?? product.initialRating} />
+        <Rating isEditable={true} setRating={setRating} rating={rating} />
       </div>
       <div className={styles.tags}>
         {product.categories.map((c, k) => (
